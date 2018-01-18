@@ -1,0 +1,7 @@
+    1. Build a webapp with Node that does the following:
+        1. Listens on port 8080
+        2. For any GET request (any URL) it will look for an query argument called “q” and respond with the value of q. For example, if I did “curl localhost:8080?q=foo” I would get back “foo”
+        3. If you get anything other than a GET, respond with a 501 status and the error message “I don’t do that”
+        4. If the incoming URL is not “/”, grab the url path and include it in the response. For example, if I did “curl localhost:8080/greg?q=foo” I would get back “greg => foo”
+        5. BONUS: If the incoming request is a POST request AND the body of the request is formatted as JSON, add a key/value field called “t”, populate it with the current epoch (seconds since 1970), log the json to stderr, and then send the JSON back to the request. For example “curl -X POST -H “Content-type: application/json” --data ‘{“x”: 1}’ localhost:8080/” would return {“x”: 1, “t”: 1459178227}
+
